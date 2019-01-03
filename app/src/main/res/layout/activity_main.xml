@@ -831,7 +831,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="E. hotspot"
+                        android:text="Ethernet Y/N?"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         tools:layout_editor_absoluteX="410dp"
                         tools:layout_editor_absoluteY="0dp" />
