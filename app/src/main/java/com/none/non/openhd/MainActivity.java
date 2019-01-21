@@ -3465,7 +3465,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(Val.equals("CELLS") == true)
         {
             EditText CELLS = (EditText) findViewById(R.id.CELLS);
-            if(Data.equals("CELLS") == true)
+            if(Data.equals("SavedAir") == true)
             {
                 //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
                 DataModel.CELLSAirAck = 1;
@@ -3530,7 +3530,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(Val.equals("IsBandSwicherEnabled") == true)
         {
             EditText IsBandSwicherEnabled = (EditText) findViewById(R.id.IsBandSwicherEnabled);
-            if(Data.equals("IsBandSwicherEnabled") == true)
+            if(Data.equals("SavedAir") == true)
             {
                 //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
                 DataModel.IsBandSwicherEnabledAirAck = 1;
@@ -3559,7 +3559,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(Val.equals("Bandwidth") == true)
         {
             EditText Bandwidth = (EditText) findViewById(R.id.Bandwidth);
-            if(Data.equals("Bandwidth") == true)
+            if(Data.equals("SavedAir") == true)
             {
                 //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
                 DataModel.BandwidthAirAck = 1;
@@ -3588,7 +3588,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(Val.equals("UplinkSpeed") == true)
         {
             EditText UplinkSpeed = (EditText) findViewById(R.id.UplinkSpeed);
-            if(Data.equals("UplinkSpeed") == true)
+            if(Data.equals("SavedAir") == true)
             {
                 //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
                 DataModel.UplinkSpeedAirAck = 1;
@@ -3617,7 +3617,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(Val.equals("ChannelToListen2") == true)
         {
             EditText ChannelToListen2 = (EditText) findViewById(R.id.ChannelToListen2);
-            if(Data.equals("ChannelToListen2") == true)
+            if(Data.equals("SavedAir") == true)
             {
                 //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
                 DataModel.ChannelToListen2AirAck = 1;
@@ -3646,7 +3646,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(Val.equals("PrimaryCardMAC") == true)
         {
             EditText PrimaryCardMAC = (EditText) findViewById(R.id.PrimaryCardMAC);
-            if(Data.equals("PrimaryCardMAC") == true)
+            if(Data.equals("SavedAir") == true)
             {
                 //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
                 DataModel.PrimaryCardMACAirAck = 1;
@@ -3675,7 +3675,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(Val.equals("SlaveCardMAC") == true)
         {
             EditText SlaveCardMAC = (EditText) findViewById(R.id.SlaveCardMAC);
-            if(Data.equals("SlaveCardMAC") == true)
+            if(Data.equals("SavedAir") == true)
             {
                 //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
                 DataModel.SlaveCardMACAirAck = 1;
@@ -3704,7 +3704,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(Val.equals("Band5Below") == true)
         {
             EditText Band5Below = (EditText) findViewById(R.id.Band5Below);
-            if(Data.equals("Band5Below") == true)
+            if(Data.equals("SavedAir") == true)
             {
                 //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
                 DataModel.Band5BelowAirAck = 1;
@@ -3733,7 +3733,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(Val.equals("Band10ValueMin") == true)
         {
             EditText Band10ValueMin = (EditText) findViewById(R.id.Band10ValueMin);
-            if(Data.equals("Band10ValueMin") == true)
+            if(Data.equals("SavedAir") == true)
             {
                 //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
                 DataModel.Band10ValueMinAirAck = 1;
@@ -3762,7 +3762,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(Val.equals("Band10ValueMax") == true)
         {
             EditText Band10ValueMax = (EditText) findViewById(R.id.Band10ValueMax);
-            if(Data.equals("Band10ValueMax") == true)
+            if(Data.equals("SavedAir") == true)
             {
                 //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
                 DataModel.Band10ValueMaxAirAck = 1;
@@ -3791,7 +3791,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(Val.equals("Band20After") == true)
         {
             EditText Band20After = (EditText) findViewById(R.id.Band20After);
-            if(Data.equals("Band20After") == true)
+            if(Data.equals("SavedAir") == true)
             {
                 //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
                 DataModel.Band20AfterAirAck = 1;
