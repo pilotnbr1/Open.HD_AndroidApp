@@ -115,6 +115,12 @@
 
     </string-array>
 
+    <string-array name="EncryptionOrRangeArray">
+        <item>value not loaded</item>
+        <item>Encryption</item>
+        <item>Range</item>
+    </string-array>
+
     <string name="SyncColors"> <font fgcolor='#0000FF'>Air only. </font> <font fgcolor='#FF0000'>Ground only. </font>  <font fgcolor='#00FF00'>Both.</font></string>
 
 
