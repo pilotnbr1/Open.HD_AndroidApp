@@ -51,6 +51,20 @@ public class WFBCDataModel {
         Camera3ValueMaxIsChanged  -= by;
         Camera4ValueMinIsChanged  -= by;
         Camera4ValueMaxIsChanged -= by;
+
+        //Requested Menu Selections
+        CELLSIsChanged -= by;
+        EncryptionOrRangeIsChanged -= by;
+                IsBandSwicherEnabledIsChanged -= by;
+                BandwidthIsChanged -= by;
+                UplinkSpeedIsChanged -= by;
+                ChannelToListen2IsChanged -= by;
+                PrimaryCardMACIsChanged -= by;
+                SlaveCardMACIsChanged -= by;
+                Band5BelowIsChanged -= by;
+                Band10ValueMinIsChanged -= by;
+                Band10ValueMaxIsChanged -= by;
+                Band20AfterIsChanged -= by;
     }
 
     public void AddData(String Variable, String Data, int IsChanged)
@@ -72,7 +86,6 @@ public class WFBCDataModel {
                 CopterIsChanged  += IsChanged;
                 break;
 
-
             case "DATARATE":
                 DATARATE = Data;
                 if(DATARATE.equals(DATARATEb) == false)
@@ -90,8 +103,6 @@ public class WFBCDataModel {
                 if(RemoteSettingsEnabled.equals(RemoteSettingsEnabledb) == false)
                     RemoteSettingsEnabledIsChanged += IsChanged;
                 break;
-
-
 
             case "FPS":
                 FPS = Data;
@@ -427,6 +438,78 @@ public class WFBCDataModel {
                 Camera4ValueMax = Data;
                 if(Camera4ValueMax.equals(Camera4ValueMaxb) == false)
                     Camera4ValueMaxIsChanged += IsChanged;
+                break;
+
+            case "CELLS":
+                CELLS = Data;
+                if(CELLS.equals(CELLSb) == false)
+                    CELLSIsChanged += IsChanged;
+                break;
+
+            case "EncryptionOrRange":
+                EncryptionOrRange = Data;
+                if(EncryptionOrRange.equals(EncryptionOrRangeb) == false)
+                    EncryptionOrRangeIsChanged += IsChanged;
+                break;
+
+            case "IsBandSwicherEnabled":
+                IsBandSwicherEnabled = Data;
+                if(IsBandSwicherEnabled.equals(IsBandSwicherEnabledb) == false)
+                    IsBandSwicherEnabledIsChanged += IsChanged;
+                break;
+
+            case "Bandwidth":
+                Bandwidth = Data;
+                if(Bandwidth.equals(Bandwidthb) == false)
+                    BandwidthIsChanged += IsChanged;
+                break;
+
+            case "UplinkSpeed":
+                UplinkSpeed = Data;
+                if(UplinkSpeed.equals(UplinkSpeedb) == false)
+                    UplinkSpeedIsChanged += IsChanged;
+                break;
+
+            case "ChannelToListen2":
+                ChannelToListen2 = Data;
+                if(ChannelToListen2.equals(ChannelToListen2b) == false)
+                    ChannelToListen2IsChanged += IsChanged;
+                break;
+
+            case "PrimaryCardMAC":
+                PrimaryCardMAC = Data;
+                if(PrimaryCardMAC.equals(PrimaryCardMACb) == false)
+                    PrimaryCardMACIsChanged += IsChanged;
+                break;
+
+            case "SlaveCardMAC":
+                SlaveCardMAC = Data;
+                if(SlaveCardMAC.equals(SlaveCardMACb) == false)
+                    SlaveCardMACIsChanged += IsChanged;
+                break;
+
+            case "Band5Below":
+                Band5Below = Data;
+                if(Band5Below.equals(Band5Belowb) == false)
+                    Band5BelowIsChanged += IsChanged;
+                break;
+
+            case "Band10ValueMin":
+                Band10ValueMin = Data;
+                if(Band10ValueMin.equals(Band10ValueMinb) == false)
+                    Band10ValueMinIsChanged += IsChanged;
+                break;
+
+            case "Band10ValueMax":
+                Band10ValueMax = Data;
+                if(Band10ValueMax.equals(Band10ValueMaxb) == false)
+                    Band10ValueMaxIsChanged += IsChanged;
+                break;
+
+            case "Band20After":
+                Band20After = Data;
+                if(Band20After.equals(Band20Afterb) == false)
+                    Band20AfterIsChanged += IsChanged;
                 break;
 
             case "DefaultAudioOut":
@@ -882,4 +965,77 @@ public class WFBCDataModel {
     public int Camera4ValueMaxIsChanged = -1;
     public int Camera4ValueMaxAirAck = 0;
     public int Camera4ValueMaxGroundAck = 0;
+
+    public String CELLS;
+    public String CELLSb;
+    public int CELLSIsChanged = -1;
+    public int CELLSAirAck = 0;
+    public int CELLSGroundAck = 0;
+
+    public String EncryptionOrRange;
+    public String EncryptionOrRangeb;
+    public int EncryptionOrRangeIsChanged = -1;
+    public int EncryptionOrRangeAirAck = 0;
+    public int EncryptionOrRangeGroundAck = 0;
+
+    public String IsBandSwicherEnabled;
+    public String IsBandSwicherEnabledb;
+    public int IsBandSwicherEnabledIsChanged = -1;
+    public int IsBandSwicherEnabledAirAck = 0;
+    public int IsBandSwicherEnabledGroundAck = 0;
+
+    public String Bandwidth;
+    public String Bandwidthb;
+    public int BandwidthIsChanged = -1;
+    public int BandwidthAirAck = 0;
+    public int BandwidthGroundAck = 0;
+
+    public String UplinkSpeed;
+    public String UplinkSpeedb;
+    public int UplinkSpeedIsChanged = -1;
+    public int UplinkSpeedAirAck = 0;
+    public int UplinkSpeedGroundAck = 0;
+
+    public String ChannelToListen2;
+    public String ChannelToListen2b;
+    public int ChannelToListen2IsChanged = -1;
+    public int ChannelToListen2AirAck = 0;
+    public int ChannelToListen2GroundAck = 0;
+
+    public String PrimaryCardMAC;
+    public String PrimaryCardMACb;
+    public int PrimaryCardMACIsChanged = -1;
+    public int PrimaryCardMACAirAck = 0;
+    public int PrimaryCardMACGroundAck = 0;
+
+    public String SlaveCardMAC;
+    public String SlaveCardMACb;
+    public int SlaveCardMACIsChanged = -1;
+    public int SlaveCardMACAirAck = 0;
+    public int SlaveCardMACGroundAck = 0;
+
+    public String Band5Below;
+    public String Band5Belowb;
+    public int Band5BelowIsChanged = -1;
+    public int Band5BelowAirAck = 0;
+    public int Band5BelowGroundAck = 0;
+
+    public String Band10ValueMin;
+    public String Band10ValueMinb;
+    public int Band10ValueMinIsChanged = -1;
+    public int Band10ValueMinAirAck = 0;
+    public int Band10ValueMinGroundAck = 0;
+
+    public String Band10ValueMax;
+    public String Band10ValueMaxb;
+    public int Band10ValueMaxIsChanged = -1;
+    public int Band10ValueMaxAirAck = 0;
+    public int Band10ValueMaxGroundAck = 0;
+
+    public String Band20After;
+    public String Band20Afterb;
+    public int Band20AfterIsChanged = -1;
+    public int Band20AfterAirAck = 0;
+    public int Band20AfterGroundAck = 0;
+
 }
