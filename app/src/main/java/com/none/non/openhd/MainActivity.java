@@ -63,6 +63,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public Spinner SpinnerFC_MSP_BAUDRATE;
     private ArrayAdapter<CharSequence> adapterFC_MSP_BAUDRATE;
 
+    public Spinner SpinnerEncryptionOrRange;
+    private ArrayAdapter<CharSequence> adapterEncryptionOrRange;
+
+
+
 
 
 
@@ -222,6 +227,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(DataModel.FC_MSP_BAUDRATEIsChanged >= 1)
                 {
                     SpinnerFC_MSP_BAUDRATE.setBackgroundColor(Color.parseColor("#ee8033"));
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+        //SpinnerEncryptionOrRange
+        SpinnerEncryptionOrRange = (Spinner) findViewById(R.id.spinnerEncryptionOrRange);
+        adapterEncryptionOrRange = ArrayAdapter.createFromResource(
+                this, R.array.EncryptionOrRangeArray, android.R.layout.simple_spinner_item);
+        adapterEncryptionOrRange.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        SpinnerEncryptionOrRange.setAdapter(adapterEncryptionOrRange);
+        SpinnerEncryptionOrRange.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                String sSelected=parent.getItemAtPosition(position).toString();
+                //Toast.makeText(getApplicationContext(),sSelected,Toast.LENGTH_SHORT).show();
+                if(sSelected.equals("value not loaded") == false)
+                    DataModel.AddData("EncryptionOrRange", sSelected,1);
+                if(DataModel.EncryptionOrRangeIsChanged >= 1)
+                {
+                    SpinnerEncryptionOrRange.setBackgroundColor(Color.parseColor("#ee8033"));
                 }
             }
 
@@ -1140,6 +1173,215 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onTextChanged(CharSequence s, int start, int before, int count) {}
         });
 
+        //Cells
+        final EditText CELLS = (EditText) findViewById(R.id.CELLS);
+        CELLS.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+
+                String mesg = s.toString();
+                DataModel.AddData("CELLS", mesg,1);
+                Log.v("CELLS", mesg);
+                if(DataModel.CELLSIsChanged >= 1)
+                {
+                    CELLS.setTextColor(Color.parseColor("#ee8033") );
+                }
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                DataModel.CELLSb = s.toString();
+            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+
+        //IsBandSwicherEnabled
+        final EditText IsBandSwicherEnabled = (EditText) findViewById(R.id.IsBandSwicherEnabled);
+        IsBandSwicherEnabled.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+
+                String mesg = s.toString();
+                DataModel.AddData("IsBandSwicherEnabled", mesg,1);
+                Log.v("IsBandSwicherEnabled", mesg);
+                if(DataModel.IsBandSwicherEnabledIsChanged >= 1)
+                {
+                    IsBandSwicherEnabled.setTextColor(Color.parseColor("#ee8033") );
+                }
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                DataModel.IsBandSwicherEnabledb = s.toString();
+            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+
+        //Bandwidth
+        final EditText Bandwidth = (EditText) findViewById(R.id.Bandwidth);
+        Bandwidth.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+
+                String mesg = s.toString();
+                DataModel.AddData("Bandwidth", mesg,1);
+                Log.v("Bandwidth", mesg);
+                if(DataModel.BandwidthIsChanged >= 1)
+                {
+                    Bandwidth.setTextColor(Color.parseColor("#ee8033") );
+                }
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                DataModel.Bandwidthb = s.toString();
+            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+
+        //UplinkSpeed
+        final EditText UplinkSpeed = (EditText) findViewById(R.id.UplinkSpeed);
+        UplinkSpeed.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+
+                String mesg = s.toString();
+                DataModel.AddData("UplinkSpeed", mesg,1);
+                Log.v("UplinkSpeed", mesg);
+                if(DataModel.UplinkSpeedIsChanged >= 1)
+                {
+                    UplinkSpeed.setTextColor(Color.parseColor("#ee8033") );
+                }
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                DataModel.UplinkSpeedb = s.toString();
+            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+
+        //ChannelToListen2
+        final EditText ChannelToListen2 = (EditText) findViewById(R.id.ChannelToListen2);
+        ChannelToListen2.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+
+                String mesg = s.toString();
+                DataModel.AddData("ChannelToListen2", mesg,1);
+                Log.v("ChannelToListen2", mesg);
+                if(DataModel.ChannelToListen2IsChanged >= 1)
+                {
+                    ChannelToListen2.setTextColor(Color.parseColor("#ee8033") );
+                }
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                DataModel.ChannelToListen2b = s.toString();
+            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+
+        //PrimaryCardMAC
+        final EditText PrimaryCardMAC = (EditText) findViewById(R.id.PrimaryCardMAC);
+        PrimaryCardMAC.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+
+                String mesg = s.toString();
+                DataModel.AddData("PrimaryCardMAC", mesg,1);
+                Log.v("PrimaryCardMAC", mesg);
+                if(DataModel.PrimaryCardMACIsChanged >= 1)
+                {
+                    PrimaryCardMAC.setTextColor(Color.parseColor("#ee8033") );
+                }
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                DataModel.PrimaryCardMACb = s.toString();
+            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+
+        //SlaveCardMAC
+        final EditText SlaveCardMAC = (EditText) findViewById(R.id.SlaveCardMAC);
+        SlaveCardMAC.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+
+                String mesg = s.toString();
+                DataModel.AddData("SlaveCardMAC", mesg,1);
+                Log.v("SlaveCardMAC", mesg);
+                if(DataModel.SlaveCardMACIsChanged >= 1)
+                {
+                    SlaveCardMAC.setTextColor(Color.parseColor("#ee8033") );
+                }
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                DataModel.SlaveCardMACb = s.toString();
+            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+
+        //Band5Below
+        final EditText Band5Below = (EditText) findViewById(R.id.Band5Below);
+        Band5Below.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+
+                String mesg = s.toString();
+                DataModel.AddData("Band5Below", mesg,1);
+                Log.v("Band5Below", mesg);
+                if(DataModel.Band5BelowIsChanged >= 1)
+                {
+                    Band5Below.setTextColor(Color.parseColor("#ee8033") );
+                }
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                DataModel.Band5Belowb = s.toString();
+            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+
+        //Band10ValueMin
+        final EditText Band10ValueMin = (EditText) findViewById(R.id.Band10ValueMin);
+        Band10ValueMin.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+
+                String mesg = s.toString();
+                DataModel.AddData("Band10ValueMin", mesg,1);
+                Log.v("Band10ValueMin", mesg);
+                if(DataModel.Band10ValueMinIsChanged >= 1)
+                {
+                    Band10ValueMin.setTextColor(Color.parseColor("#ee8033") );
+                }
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                DataModel.Band10ValueMinb = s.toString();
+            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+
+        //Band10ValueMax
+        final EditText Band10ValueMax = (EditText) findViewById(R.id.Band10ValueMax);
+        Band10ValueMax.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+
+                String mesg = s.toString();
+                DataModel.AddData("Band10ValueMax", mesg,1);
+                Log.v("Band10ValueMax", mesg);
+                if(DataModel.Band10ValueMaxIsChanged >= 1)
+                {
+                    Band10ValueMax.setTextColor(Color.parseColor("#ee8033") );
+                }
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                DataModel.Band10ValueMaxb = s.toString();
+            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+
+        //Band20After
+        final EditText Band20After = (EditText) findViewById(R.id.Band20After);
+        Band20After.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+
+                String mesg = s.toString();
+                DataModel.AddData("Band20After", mesg,1);
+                Log.v("Band20After", mesg);
+                if(DataModel.Band20AfterIsChanged >= 1)
+                {
+                    Band20After.setTextColor(Color.parseColor("#ee8033") );
+                }
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                DataModel.Band20Afterb = s.toString();
+            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+
         //
         //
         //
@@ -1253,6 +1495,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             catch (Exception e)
                             {
                                 e.printStackTrace();
+                                Toast.makeText(getApplicationContext(), "Sorry, there was an Error", Toast.LENGTH_LONG).show();
                             }
 
 
@@ -1276,6 +1519,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             catch (Exception e)
                             {
                                 e.printStackTrace();
+                                Toast.makeText(getApplicationContext(), "Sorry, there was an Error", Toast.LENGTH_LONG).show();
                             }
                         }
 
@@ -1291,6 +1535,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 catch (IOException e)
                 {
                     e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "Sorry, there was an Error", Toast.LENGTH_LONG).show();
                 }
                 finally
                 {
@@ -1321,7 +1566,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             catch(InterruptedException ex)
             {
-
+                ex.printStackTrace();
+                Toast.makeText(getApplicationContext(), "Sorry, there was an Error", Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -1342,7 +1588,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             catch(InterruptedException ex)
             {
-
+                ex.printStackTrace();
+                Toast.makeText(getApplicationContext(), "Sorry, there was an Error", Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -1363,7 +1610,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             catch(InterruptedException ex)
             {
-
+                ex.printStackTrace();
+                Toast.makeText(getApplicationContext(), "Sorry, there was an Error", Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -1385,7 +1633,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             catch(InterruptedException ex)
             {
-
+                ex.printStackTrace();
+                Toast.makeText(getApplicationContext(), "Sorry, there was an Error", Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -1412,6 +1661,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 catch (IOException e)
                 {
                     e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "Sorry, there was an Error", Toast.LENGTH_LONG).show();
                 }
                 finally {
 
@@ -1492,6 +1742,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(DataModel.Camera3ValueMaxIsChanged >= 1) { PackMessageAndSend("Camera3ValueMax", DataModel.Camera3ValueMax); }
         if(DataModel.Camera4ValueMinIsChanged >= 1) { PackMessageAndSend("Camera4ValueMin", DataModel.Camera4ValueMin); }
         if(DataModel.Camera4ValueMaxIsChanged >= 1) { PackMessageAndSend("Camera4ValueMax", DataModel.Camera4ValueMax); }
+
+        //Requested Menu Selections
+        if(DataModel.CELLSIsChanged >= 1) { PackMessageAndSendOSD("CELLS", DataModel.CELLS); }
+        if(DataModel.EncryptionOrRangeIsChanged >= 1) { PackMessageAndSend("EncryptionOrRange", DataModel.EncryptionOrRange); }
+        if(DataModel.IsBandSwicherEnabledIsChanged >= 1) { PackMessageAndSend("IsBandSwicherEnabled", DataModel.IsBandSwicherEnabled); }
+        if(DataModel.BandwidthIsChanged >= 1) { PackMessageAndSend("Bandwidth", DataModel.Bandwidth); }
+        if(DataModel.UplinkSpeedIsChanged >= 1) { PackMessageAndSend("UplinkSpeed", DataModel.UplinkSpeed); }
+        if(DataModel.ChannelToListen2IsChanged >= 1) { PackMessageAndSend("ChannelToListen2", DataModel.ChannelToListen2); }
+        if(DataModel.PrimaryCardMACIsChanged >= 1) { PackMessageAndSend("PrimaryCardMAC", DataModel.PrimaryCardMAC); }
+        if(DataModel.SlaveCardMACIsChanged >= 1) { PackMessageAndSend("SlaveCardMAC", DataModel.SlaveCardMAC); }
+        if(DataModel.Band5BelowIsChanged >= 1) { PackMessageAndSend("Band5Below", DataModel.Band5Below); }
+        if(DataModel.Band10ValueMinIsChanged >= 1) { PackMessageAndSend("Band10ValueMin", DataModel.Band10ValueMin); }
+        if(DataModel.Band10ValueMaxIsChanged >= 1) { PackMessageAndSend("Band10ValueMax", DataModel.Band10ValueMax); }
+        if(DataModel.Band20AfterIsChanged >= 1) { PackMessageAndSend("Band20After", DataModel.Band20After); }
     }
 
     private void RequestSettingsAll()
@@ -1519,6 +1783,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 catch (IOException e)
                 {
                     e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "Sorry, there was an Error", Toast.LENGTH_LONG).show();
                 }
 
 
@@ -3194,6 +3459,361 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             {
                 //Toast.makeText(getApplicationContext(), "false and false in "+ Data, Toast.LENGTH_LONG).show();
                 Camera4ValueMax.setText(Data);
+            }
+        }
+
+        if(Val.equals("CELLS") == true)
+        {
+            EditText CELLS = (EditText) findViewById(R.id.CELLS);
+            if(Data.equals("CELLS") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.CELLSAirAck = 1;
+                CELLS.setTextColor(Color.parseColor(ColorsAirOnly) );
+            }
+            if(Data.equals("SavedGround") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedGround in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.CELLSGroundAck = 1;
+                CELLS.setTextColor(Color.parseColor(ColorsGroundOnly) );
+            }
+            if(DataModel.CELLSGroundAck == 1 && DataModel.CELLSAirAck == 1)
+            {
+                Toast.makeText(getApplicationContext(), Val + " \nAir and Ground are in sync", Toast.LENGTH_LONG).show();
+                CELLS.setTextColor(Color.parseColor(ColorsBoth) );
+                DataModel.CELLSGroundAck = 0;
+                DataModel.CELLSAirAck = 0;
+            }
+            if(Data.equals("SavedGround") == false && Data.equals("SavedAir") == false)
+            {
+                //Toast.makeText(getApplicationContext(), "false and false in "+ Data, Toast.LENGTH_LONG).show();
+                CELLS.setText(Data);
+            }
+        }
+
+        if(Val.equals("EncryptionOrRange") == true)
+        {
+            //EditText FC_RC_BAUDRATE = (EditText) findViewById(R.id.EditFC_RC_BAUDRATE);
+            //FC_RC_BAUDRATE.setText(Data);
+            //mySpinner.setSelection(adapter.getPosition(Data));
+            if(Data.equals("SavedAir") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.EncryptionOrRangeAirAck = 1;
+                SpinnerEncryptionOrRange.setBackgroundColor(Color.parseColor(ColorsAirOnly) );
+            }
+            if(Data.equals("SavedGround") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedGround in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.EncryptionOrRangeGroundAck = 1;
+                SpinnerEncryptionOrRange.setBackgroundColor(Color.parseColor(ColorsGroundOnly) );
+            }
+            if(DataModel.EncryptionOrRangeGroundAck == 1 && DataModel.EncryptionOrRangeAirAck == 1)
+            {
+                Toast.makeText(getApplicationContext(), Val + " \nAir and Ground are in sync", Toast.LENGTH_LONG).show();
+                SpinnerEncryptionOrRange.setBackgroundColor(Color.parseColor(ColorsBoth) );
+                DataModel.EncryptionOrRangeGroundAck = 0;
+                DataModel.EncryptionOrRangeAirAck = 0;
+            }
+            if(Data.equals("SavedGround") == false && Data.equals("SavedAir") == false)
+            {
+                //Toast.makeText(getApplicationContext(), "false and false in "+ Data, Toast.LENGTH_LONG).show();
+                String selectedNow = SpinnerEncryptionOrRange.getSelectedItem().toString();
+                if(selectedNow.equals(Data) == true)
+                    DataModel.EncryptionOrRangeIsChanged = -1;
+                if(selectedNow.equals("value not loaded") == true)
+                    DataModel.EncryptionOrRangeIsChanged = -1;
+                SpinnerEncryptionOrRange.setSelection(((ArrayAdapter)SpinnerEncryptionOrRange.getAdapter()).getPosition(Data));
+            }
+        }
+
+        if(Val.equals("IsBandSwicherEnabled") == true)
+        {
+            EditText IsBandSwicherEnabled = (EditText) findViewById(R.id.IsBandSwicherEnabled);
+            if(Data.equals("IsBandSwicherEnabled") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.IsBandSwicherEnabledAirAck = 1;
+                IsBandSwicherEnabled.setTextColor(Color.parseColor(ColorsAirOnly) );
+            }
+            if(Data.equals("SavedGround") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedGround in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.IsBandSwicherEnabledGroundAck = 1;
+                IsBandSwicherEnabled.setTextColor(Color.parseColor(ColorsGroundOnly) );
+            }
+            if(DataModel.IsBandSwicherEnabledGroundAck == 1 && DataModel.IsBandSwicherEnabledAirAck == 1)
+            {
+                Toast.makeText(getApplicationContext(), Val + " \nAir and Ground are in sync", Toast.LENGTH_LONG).show();
+                IsBandSwicherEnabled.setTextColor(Color.parseColor(ColorsBoth) );
+                DataModel.IsBandSwicherEnabledGroundAck = 0;
+                DataModel.IsBandSwicherEnabledAirAck = 0;
+            }
+            if(Data.equals("SavedGround") == false && Data.equals("SavedAir") == false)
+            {
+                //Toast.makeText(getApplicationContext(), "false and false in "+ Data, Toast.LENGTH_LONG).show();
+                IsBandSwicherEnabled.setText(Data);
+            }
+        }
+
+        if(Val.equals("Bandwidth") == true)
+        {
+            EditText Bandwidth = (EditText) findViewById(R.id.Bandwidth);
+            if(Data.equals("Bandwidth") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.BandwidthAirAck = 1;
+                Bandwidth.setTextColor(Color.parseColor(ColorsAirOnly) );
+            }
+            if(Data.equals("SavedGround") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedGround in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.BandwidthGroundAck = 1;
+                Bandwidth.setTextColor(Color.parseColor(ColorsGroundOnly) );
+            }
+            if(DataModel.BandwidthGroundAck == 1 && DataModel.BandwidthAirAck == 1)
+            {
+                Toast.makeText(getApplicationContext(), Val + " \nAir and Ground are in sync", Toast.LENGTH_LONG).show();
+                Bandwidth.setTextColor(Color.parseColor(ColorsBoth) );
+                DataModel.BandwidthGroundAck = 0;
+                DataModel.BandwidthAirAck = 0;
+            }
+            if(Data.equals("SavedGround") == false && Data.equals("SavedAir") == false)
+            {
+                //Toast.makeText(getApplicationContext(), "false and false in "+ Data, Toast.LENGTH_LONG).show();
+                Bandwidth.setText(Data);
+            }
+        }
+
+        if(Val.equals("UplinkSpeed") == true)
+        {
+            EditText UplinkSpeed = (EditText) findViewById(R.id.UplinkSpeed);
+            if(Data.equals("UplinkSpeed") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.UplinkSpeedAirAck = 1;
+                UplinkSpeed.setTextColor(Color.parseColor(ColorsAirOnly) );
+            }
+            if(Data.equals("SavedGround") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedGround in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.UplinkSpeedGroundAck = 1;
+                UplinkSpeed.setTextColor(Color.parseColor(ColorsGroundOnly) );
+            }
+            if(DataModel.UplinkSpeedGroundAck == 1 && DataModel.UplinkSpeedAirAck == 1)
+            {
+                Toast.makeText(getApplicationContext(), Val + " \nAir and Ground are in sync", Toast.LENGTH_LONG).show();
+                UplinkSpeed.setTextColor(Color.parseColor(ColorsBoth) );
+                DataModel.UplinkSpeedGroundAck = 0;
+                DataModel.UplinkSpeedAirAck = 0;
+            }
+            if(Data.equals("SavedGround") == false && Data.equals("SavedAir") == false)
+            {
+                //Toast.makeText(getApplicationContext(), "false and false in "+ Data, Toast.LENGTH_LONG).show();
+                UplinkSpeed.setText(Data);
+            }
+        }
+
+        if(Val.equals("ChannelToListen2") == true)
+        {
+            EditText ChannelToListen2 = (EditText) findViewById(R.id.ChannelToListen2);
+            if(Data.equals("ChannelToListen2") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.ChannelToListen2AirAck = 1;
+                ChannelToListen2.setTextColor(Color.parseColor(ColorsAirOnly) );
+            }
+            if(Data.equals("SavedGround") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedGround in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.ChannelToListen2GroundAck = 1;
+                ChannelToListen2.setTextColor(Color.parseColor(ColorsGroundOnly) );
+            }
+            if(DataModel.ChannelToListen2GroundAck == 1 && DataModel.ChannelToListen2AirAck == 1)
+            {
+                Toast.makeText(getApplicationContext(), Val + " \nAir and Ground are in sync", Toast.LENGTH_LONG).show();
+                ChannelToListen2.setTextColor(Color.parseColor(ColorsBoth) );
+                DataModel.ChannelToListen2GroundAck = 0;
+                DataModel.ChannelToListen2AirAck = 0;
+            }
+            if(Data.equals("SavedGround") == false && Data.equals("SavedAir") == false)
+            {
+                //Toast.makeText(getApplicationContext(), "false and false in "+ Data, Toast.LENGTH_LONG).show();
+                ChannelToListen2.setText(Data);
+            }
+        }
+
+        if(Val.equals("PrimaryCardMAC") == true)
+        {
+            EditText PrimaryCardMAC = (EditText) findViewById(R.id.PrimaryCardMAC);
+            if(Data.equals("PrimaryCardMAC") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.PrimaryCardMACAirAck = 1;
+                PrimaryCardMAC.setTextColor(Color.parseColor(ColorsAirOnly) );
+            }
+            if(Data.equals("SavedGround") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedGround in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.PrimaryCardMACGroundAck = 1;
+                PrimaryCardMAC.setTextColor(Color.parseColor(ColorsGroundOnly) );
+            }
+            if(DataModel.PrimaryCardMACGroundAck == 1 && DataModel.PrimaryCardMACAirAck == 1)
+            {
+                Toast.makeText(getApplicationContext(), Val + " \nAir and Ground are in sync", Toast.LENGTH_LONG).show();
+                PrimaryCardMAC.setTextColor(Color.parseColor(ColorsBoth) );
+                DataModel.PrimaryCardMACGroundAck = 0;
+                DataModel.PrimaryCardMACAirAck = 0;
+            }
+            if(Data.equals("SavedGround") == false && Data.equals("SavedAir") == false)
+            {
+                //Toast.makeText(getApplicationContext(), "false and false in "+ Data, Toast.LENGTH_LONG).show();
+                PrimaryCardMAC.setText(Data);
+            }
+        }
+
+        if(Val.equals("SlaveCardMAC") == true)
+        {
+            EditText SlaveCardMAC = (EditText) findViewById(R.id.SlaveCardMAC);
+            if(Data.equals("SlaveCardMAC") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.SlaveCardMACAirAck = 1;
+                SlaveCardMAC.setTextColor(Color.parseColor(ColorsAirOnly) );
+            }
+            if(Data.equals("SavedGround") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedGround in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.SlaveCardMACGroundAck = 1;
+                SlaveCardMAC.setTextColor(Color.parseColor(ColorsGroundOnly) );
+            }
+            if(DataModel.SlaveCardMACGroundAck == 1 && DataModel.SlaveCardMACAirAck == 1)
+            {
+                Toast.makeText(getApplicationContext(), Val + " \nAir and Ground are in sync", Toast.LENGTH_LONG).show();
+                SlaveCardMAC.setTextColor(Color.parseColor(ColorsBoth) );
+                DataModel.SlaveCardMACGroundAck = 0;
+                DataModel.SlaveCardMACAirAck = 0;
+            }
+            if(Data.equals("SavedGround") == false && Data.equals("SavedAir") == false)
+            {
+                //Toast.makeText(getApplicationContext(), "false and false in "+ Data, Toast.LENGTH_LONG).show();
+                SlaveCardMAC.setText(Data);
+            }
+        }
+
+        if(Val.equals("Band5Below") == true)
+        {
+            EditText Band5Below = (EditText) findViewById(R.id.Band5Below);
+            if(Data.equals("Band5Below") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.Band5BelowAirAck = 1;
+                Band5Below.setTextColor(Color.parseColor(ColorsAirOnly) );
+            }
+            if(Data.equals("SavedGround") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedGround in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.Band5BelowGroundAck = 1;
+                Band5Below.setTextColor(Color.parseColor(ColorsGroundOnly) );
+            }
+            if(DataModel.Band5BelowGroundAck == 1 && DataModel.Band5BelowAirAck == 1)
+            {
+                Toast.makeText(getApplicationContext(), Val + " \nAir and Ground are in sync", Toast.LENGTH_LONG).show();
+                Band5Below.setTextColor(Color.parseColor(ColorsBoth) );
+                DataModel.Band5BelowGroundAck = 0;
+                DataModel.Band5BelowAirAck = 0;
+            }
+            if(Data.equals("SavedGround") == false && Data.equals("SavedAir") == false)
+            {
+                //Toast.makeText(getApplicationContext(), "false and false in "+ Data, Toast.LENGTH_LONG).show();
+                Band5Below.setText(Data);
+            }
+        }
+
+        if(Val.equals("Band10ValueMin") == true)
+        {
+            EditText Band10ValueMin = (EditText) findViewById(R.id.Band10ValueMin);
+            if(Data.equals("Band10ValueMin") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.Band10ValueMinAirAck = 1;
+                Band10ValueMin.setTextColor(Color.parseColor(ColorsAirOnly) );
+            }
+            if(Data.equals("SavedGround") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedGround in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.Band10ValueMinGroundAck = 1;
+                Band10ValueMin.setTextColor(Color.parseColor(ColorsGroundOnly) );
+            }
+            if(DataModel.Band10ValueMinGroundAck == 1 && DataModel.Band10ValueMinAirAck == 1)
+            {
+                Toast.makeText(getApplicationContext(), Val + " \nAir and Ground are in sync", Toast.LENGTH_LONG).show();
+                Band10ValueMin.setTextColor(Color.parseColor(ColorsBoth) );
+                DataModel.Band10ValueMinGroundAck = 0;
+                DataModel.Band10ValueMinAirAck = 0;
+            }
+            if(Data.equals("SavedGround") == false && Data.equals("SavedAir") == false)
+            {
+                //Toast.makeText(getApplicationContext(), "false and false in "+ Data, Toast.LENGTH_LONG).show();
+                Band10ValueMin.setText(Data);
+            }
+        }
+
+        if(Val.equals("Band10ValueMax") == true)
+        {
+            EditText Band10ValueMax = (EditText) findViewById(R.id.Band10ValueMax);
+            if(Data.equals("Band10ValueMax") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.Band10ValueMaxAirAck = 1;
+                Band10ValueMax.setTextColor(Color.parseColor(ColorsAirOnly) );
+            }
+            if(Data.equals("SavedGround") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedGround in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.Band10ValueMaxGroundAck = 1;
+                Band10ValueMax.setTextColor(Color.parseColor(ColorsGroundOnly) );
+            }
+            if(DataModel.Band10ValueMaxGroundAck == 1 && DataModel.Band10ValueMaxAirAck == 1)
+            {
+                Toast.makeText(getApplicationContext(), Val + " \nAir and Ground are in sync", Toast.LENGTH_LONG).show();
+                Band10ValueMax.setTextColor(Color.parseColor(ColorsBoth) );
+                DataModel.Band10ValueMaxGroundAck = 0;
+                DataModel.Band10ValueMaxAirAck = 0;
+            }
+            if(Data.equals("SavedGround") == false && Data.equals("SavedAir") == false)
+            {
+                //Toast.makeText(getApplicationContext(), "false and false in "+ Data, Toast.LENGTH_LONG).show();
+                Band10ValueMax.setText(Data);
+            }
+        }
+
+        if(Val.equals("Band20After") == true)
+        {
+            EditText Band20After = (EditText) findViewById(R.id.Band20After);
+            if(Data.equals("Band20After") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.Band20AfterAirAck = 1;
+                Band20After.setTextColor(Color.parseColor(ColorsAirOnly) );
+            }
+            if(Data.equals("SavedGround") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedGround in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.Band20AfterGroundAck = 1;
+                Band20After.setTextColor(Color.parseColor(ColorsGroundOnly) );
+            }
+            if(DataModel.Band20AfterGroundAck == 1 && DataModel.Band20AfterAirAck == 1)
+            {
+                Toast.makeText(getApplicationContext(), Val + " \nAir and Ground are in sync", Toast.LENGTH_LONG).show();
+                Band20After.setTextColor(Color.parseColor(ColorsBoth) );
+                DataModel.Band20AfterGroundAck = 0;
+                DataModel.Band20AfterAirAck = 0;
+            }
+            if(Data.equals("SavedGround") == false && Data.equals("SavedAir") == false)
+            {
+                //Toast.makeText(getApplicationContext(), "false and false in "+ Data, Toast.LENGTH_LONG).show();
+                Band20After.setText(Data);
             }
         }
 
